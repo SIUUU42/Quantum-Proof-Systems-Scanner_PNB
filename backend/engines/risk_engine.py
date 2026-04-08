@@ -41,10 +41,13 @@ def calculate_advanced_risk(
 
     def protocol_risk(legacy_protocols_supported, superior_protocol_supported):
     # Check for legacy protocol support
-    if legacy_protocols_supported:
+    if has_legacy:
+        return "Not Safe"
+    # Check for 1.2
+    if has_1_2:
         return "Not Safe"
     # If only superior protocols are supported
-    if superior_protocol_supported:
+    if has_1_3:
         return "Safe"
     return "Not Safe"
 
